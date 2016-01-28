@@ -25,22 +25,92 @@
 h1 {
     color: white;
     font-family: 'Norwester-Regular' !important;
+    font-size: 71px;
 }
 
 h5 {
     color: #68888C;
     font-family: 'Roboto', sans-serif;
+    font-size: 26px;
 }
 
-.fit-keyword {
-    color: #F26E70;
+#userEmail {
+    font-family: 'Roboto', sans-serif;
+    /* email: */
+    font-family: Roboto-Thin;
+    font-size: 23px!important;
+    color: #9A9A9A;
+    letter-spacing: 1.18px;
+    line-height: 48px;
+    /* Rectangle 2: */
+    background: #FFFFFF;
+    border-radius: 8px 8px 8px 0px 8px;
+    border: none!important;
+    height: 50px;
+    width: 50%!important;
+}
+
+.howItWorksHeader {
+    padding-bottom: 80px;
+    h5 {
+        @media (min-width: 48em) {
+            width: 70%;
+        }
+        width: 90%;
+        font-size: 21px;
+        font-family: Roboto-Thin;
+    }
+}
+
+#howItWorks {
+    color: #99D0D6;
+    font-family: 'Norwester-Regular' !important;
+    font-size: 51px;
+}
+
+.fit-step {
+    /* Get awesome metrics.: */
+    font-family: Roboto;
+    font-size: 20px;
+    color: rgba(42, 40, 37, 0.49);
+    letter-spacing: 0.98px;
+    line-height: 39px;
+}
+
+.fit-signup-row {
+    margin-top: 45px;
+    img {
+        margin-top: 20px;
+        width: 350px;
+        margin-bottom: 40px!important;
+        @media (min-width: 48em) {
+            width: 400px!important;
+            margin-bottom: 0px!important;
+        }
+    }
+}
+
+.howitworksSteps {
+    .imgContainer {
+        margin-bottom: 10px;
+        height: 291px;
+    }
+}
+
+.stepRow {
+    margin-bottom: 80px;
+    @media (min-width: 48em) {
+        margin-bottom: 40px;
+    }
 }
 
 .fit-section-blue {
     background: #A6E6F0!important;
+    padding-bottom: 100px;
 }
 
 .fit-section-white {
+    padding-top: 100px;
     background: white;
 }
 
@@ -49,4 +119,100 @@ h5 {
     border: 1px solid white;
     font-family: 'Roboto', sans-serif;
     color: white;
+    .fit-no-glow;
+    /* Fitter: */
+    font-family: Roboto-Thin;
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: 1.57px;
+    line-height: 63px;
+    /* Rectangle 4: */
+    border: 1px solid #FFFFFF;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.fit-prompt {
+    font-family: 'Norwester-Regular' !important;
+    color: #68888C;
+    font-size: 51px;
+}
+
+.fit-no-glow {
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.red-button {
+    /* Rectangle 3: */
+    background: #F26E70;
+    border-radius: 8px;
+    /* Get App: */
+    font-family: Roboto-Bold;
+    font-size: 25px;
+    height: 60px;
+    color: #FFFFFF;
+    letter-spacing: 1.18px;
+    line-height: 48px;
+    border: none!important;
+}
+
+.fit-submit {
+    font-family: Roboto-Bold;
+    font-size: 23px;
+    letter-spacing: 1.18px;
+    border: none;
+    color: #ffffff;
+    background-color: #F26E70;
+    border-color: #FFFFFF;
+}
+
+.fit-submit:hover,
+.fit-submit:focus,
+.fit-submit:active,
+.fit-submit.active,
+.open .dropdown-toggle.fit-submit {
+    color: #ffffff;
+    background-color: #E36B6D;
+    border-color: #FFFFFF;
+}
+
+.fit-submit:active,
+.fit-submit.active,
+.open .dropdown-toggle.fit-submit {
+    background-image: none;
+}
+
+.fit-submit.disabled,
+.fit-submit[disabled],
+fieldset[disabled] .fit-submit,
+.fit-submit.disabled:hover,
+.fit-submit[disabled]:hover,
+fieldset[disabled] .fit-submit:hover,
+.fit-submit.disabled:focus,
+.fit-submit[disabled]:focus,
+fieldset[disabled] .fit-submit:focus,
+.fit-submit.disabled:active,
+.fit-submit[disabled]:active,
+fieldset[disabled] .fit-submit:active,
+.fit-submit.disabled.active,
+.fit-submit[disabled].active,
+fieldset[disabled] .fit-submit.active {
+    background-color: #F26E70;
+    border-color: #FFFFFF;
+}
+
+.fit-submit .badge {
+    color: #F26E70;
+    background-color: #ffffff;
+}
+
+.fit-submit {
+    &:focus {
+        .fit-no-glow;
+    }
+}
+
+.fit-keyword {
+    color: #F26E70;
 }
