@@ -1,0 +1,55 @@
+doctype html
+html(lang='en')
+  head
+
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css', integrity='sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd', crossorigin='anonymous')
+    link(rel='stylesheet' href='/styles/importer.css')
+  body
+    .fit-section-blue
+      nav
+        button.fit-logo Fitter
+      
+      .container
+        .row
+          h1.text-xs-center Let your phone do the work
+          h5.text-xs-center
+            | Magically 
+            span.fit-keyword detect
+            |  and 
+            span.fit-keyword track 
+            | your entire workout!
+
+        .row
+          .col-sm-6
+            img(src="/images/main_phone.png" style="width: 300px")
+          .col-sm-6
+            form
+              fieldset.form-group
+                label(for='exampleInputEmail1') Get early access!
+                input#userEmail.form-control(type='email', placeholder='email')
+              button.btn.btn-primary(type='submit') Get App
+    .fit-section-white
+        .container
+          .row
+            h3.text-xs-center How it works
+          .row
+            .col-sm-4
+              img(src="/images/estimote.png" style="width: 300px")
+              p.text-xs-center
+              | Beacons provide location awareness in your gym
+            .col-sm-4
+              img(src="/images/detected.png" style="width: 300px")
+              p.text-xs-center
+              | Your phone detects where you are, and what you are doing
+            .col-sm-4
+              img(src="/images/graph.png" style="width: 300px")
+              p.text-xs-center
+              | Get awesome metrics. Your weight, reps, sets, and more!
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.1.1/js/tether.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js', integrity='sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7', crossorigin='anonymous')
