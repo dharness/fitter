@@ -22,6 +22,10 @@ module.exports = {
     afterCreate: function(newUser, next) {
         console.log(newUser);
 
+        // 
+        // EMAIL IT TO THE PATRON
+        // 
+
         // setup e-mail data with unicode symbols
         var mailOptions = {
             from: 'Dylan Harness 👥 <fitter.app.beta@gmail.com>', // sender address
@@ -36,10 +40,21 @@ module.exports = {
             if (error) {
                 return console.log(error);
             }
-            next();
             console.log('Message sent: ' + info.response);
         });
 
+        // 
+        // EMAIL IT TO YOURSELF
+        // 
+        mailOptions.html = mailOptions.to + ' has just signed up';
+        mailOptions.to = 'Dylan Harness 👥 <fitter.app.beta@gmail.com>';
+        transporter.sendMail(mailOptions, function(error, info) {
+            if (error) {
+                return console.log(error);
+            }
+            next();
+            console.log('Message sent: ' + info.response);
+        });
 
     }
 };

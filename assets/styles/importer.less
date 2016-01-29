@@ -17,7 +17,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,900italic,400italic,500,500italic,900,700italic,700);
 @font-face {
     font-family: 'Norwester-Regular';
-    src: url('/styles/fonts/Norwester-Regular.eot?#iefix') format('embedded-opentype'), url('/styles/fonts/Norwester-Regular.svg#Norwester-Regular') format('svg');
+    src: url('fonts/Norwester-Regular/Norwester-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/Norwester-Regular/Norwester-Regular.woff') format('woff'), url('fonts/Norwester-Regular/Norwester-Regular.ttf') format('truetype'), url('fonts/Norwester-Regular/Norwester-Regular.svg#Norwester-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -37,7 +37,7 @@ h5 {
 #userEmail {
     font-family: 'Roboto', sans-serif;
     /* email: */
-    font-family: Roboto-Thin;
+    font-weight: 200;
     font-size: 23px!important;
     color: #9A9A9A;
     letter-spacing: 1.18px;
@@ -47,7 +47,10 @@ h5 {
     border-radius: 8px 8px 8px 0px 8px;
     border: none!important;
     height: 50px;
-    width: 50%!important;
+    width: 70%!important;
+    @media (min-width: 48em) {
+        width: 50%;
+    }
 }
 
 .howItWorksHeader {
@@ -58,7 +61,9 @@ h5 {
         }
         width: 90%;
         font-size: 21px;
-        font-family: Roboto-Thin;
+        font-family: 'Roboto',
+        sans-serif;
+        font-weight: 200;
     }
 }
 
@@ -81,10 +86,10 @@ h5 {
     margin-top: 45px;
     img {
         margin-top: 20px;
-        width: 350px;
+        width: 80%;
         margin-bottom: 40px!important;
         @media (min-width: 48em) {
-            width: 400px!important;
+            // width: 400px!important;
             margin-bottom: 0px!important;
         }
     }
@@ -118,10 +123,10 @@ h5 {
     background: none!important;
     border: 1px solid white;
     font-family: 'Roboto', sans-serif;
+    font-weight: 200;
     color: white;
     .fit-no-glow;
     /* Fitter: */
-    font-family: Roboto-Thin;
     font-size: 48px;
     color: #FFFFFF;
     letter-spacing: 1.57px;
@@ -158,13 +163,17 @@ h5 {
 }
 
 .fit-submit {
-    font-family: Roboto-Bold;
+    font-family: 'Roboto', sans-serif;
     font-size: 23px;
     letter-spacing: 1.18px;
     border: none;
     color: #ffffff;
     background-color: #F26E70;
     border-color: #FFFFFF;
+    width: 70%!important;
+    @media (min-width: 48em) {
+        width: 30%;
+    }
 }
 
 .fit-submit:hover,
