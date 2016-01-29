@@ -216,3 +216,72 @@ fieldset[disabled] .fit-submit.active {
 .fit-keyword {
     color: #F26E70;
 }
+
+.emailSent {
+    margin-top: 10px;
+    width: 70%;
+    display: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .sentMessage {
+        color: #68888C;
+        font-family: 'Roboto', sans-serif;
+        font-size: 26px;
+    }
+    // border: 2px solid #68888C;
+    background: white;
+    border-radius: 2px;
+}
+
+// ------- SPINNNER STUFF
+.spinner {
+    display: none;
+    margin: 100px auto 0;
+    margin-top: 10px;
+    width: 70px;
+    text-align: center;
+}
+
+.spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0)
+    }
+    40% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}

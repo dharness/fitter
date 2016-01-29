@@ -8,6 +8,8 @@ html(lang='en')
 
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css', integrity='sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd', crossorigin='anonymous')
     link(rel='stylesheet' href='/styles/importer.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css')
+
   body
     .fit-section-blue
       nav.text-xs-center.text-md-left 
@@ -27,14 +29,24 @@ html(lang='en')
           .col-xs-12.col-md-6.text-xs-center
             img(src="/images/main_phone.png")
           .col-xs-12.col-md-6
-            form.text-xs-center
+            form#signupForm.text-xs-center
               fieldset.form-group
-                label.fit-prompt.text-xs-center(for='exampleInputEmail1') Get early
+                label.fit-prompt.text-xs-center() Get early
                   br
                   | access!
                 center
-                  input#userEmail.form-control.text-xs-center(type='email', placeholder='email')
-              button.btn.fit-submit(type='submit') Get Free Beta
+                  .spinner
+                    .bounce1
+                    |    
+                    .bounce2
+                    |    
+                    .bounce3
+                center
+                  .emailSent.animation-target
+                    span.sentMessage
+                center
+                  input#userEmail.form-control.text-xs-center(type='email', name="email" placeholder='email' required)
+              button#submitBtn.btn.fit-submit Get Free Beta
     .fit-section-white
         .container
           .row.howItWorksHeader.text-xs-center
@@ -71,8 +83,50 @@ html(lang='en')
                   img(src="/images/graph.png" style="width: 250px")
                 .col-xs-12
                   p.fit-step.text-xs-center
-                    | Get awesome metrics. Your weight, reps, sets, and more!
+                    | Get awesome metrics - your weight, reps,  sets, and more!
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.1.1/js/tether.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js', integrity='sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js')
+    script.
+
+      function validateEmail(email) {
+          var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(email);
+      }
+
+      $('#submitBtn').click(function(){
+        event.preventDefault();
+        if(validateEmail($('#userEmail').val())){
+          // hide/show input and stuff
+          $('#userEmail').hide();
+          $('.spinner').show()
+          $('#submitBtn').hide()
+        }else {
+          sweetAlert("Oops...", "Please enter a valid email address! We won't spam you, we promise", "error");
+        }
+
+        $.ajax({
+          type: 'POST',
+          url: 'http://localhost:1337/user',
+          contentType: "application/x-www-form-urlencoded",
+          data: {
+            email: $('#userEmail').val()
+          },
+          success: function(){
+            $('.spinner').hide()
+            $('.sentMessage').html('Email sent to ' + $('#userEmail').val())
+            $('.emailSent').show();
+
+            swal({
+              title:"Get ready!",
+              text:"Your beta access kit is on it's way to your email!",
+              type:"success"
+            });
+          },
+          failure: function(){
+            sweetAlert("Oops...", "Please enter a valid email address! We won't spam you, we promise", "error");
+          }
+        })
+      })
